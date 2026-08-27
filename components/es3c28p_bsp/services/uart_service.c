@@ -85,11 +85,17 @@ esp_err_t uart_service_init(void)
     }
     result = uart_param_config(UART_SERVICE_PORT, &config);
     if (result == ESP_OK) {
-        result = uart_set_pin(UART_SERVICE_PORT, pins->uart_tx, pins->uart_rx,
-                              UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
+        result = gpio_reset_pin(pins->uart_tx);
+    }
+    if (result == ESP_OK) {
+        result = gpio_reset_pin(pins->uart_rx);
     }
     if (result == ESP_OK) {
         result = gpio_set_pull_mode(pins->uart_rx, GPIO_PULLUP_ONLY);
+    }
+    if (result == ESP_OK) {
+        result = uart_set_pin(UART_SERVICE_PORT, pins->uart_tx, pins->uart_rx,
+                              UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
     }
     if (result != ESP_OK) {
         uart_driver_delete(UART_SERVICE_PORT);
