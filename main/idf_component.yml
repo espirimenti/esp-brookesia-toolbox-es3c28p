@@ -1,0 +1,5 @@
+dependencies:
+  idf: ">=5.5.0"
+  brookesia_core:
+    version: "*"
+    override_path: "../third_party/esp-brookesia/core/brookesia_core"
