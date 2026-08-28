@@ -8,11 +8,12 @@ Developer toolbox firmware for the LCDWiki ES3C28P (ESP32-S3, ILI9341 320x240, F
 - working display and touch BSP for ES3C28P;
 - **System** app with chip, heap, PSRAM, and uptime information;
 - **I2C Scanner** app with non-blocking bus scan and known-device hints;
-- **UART Monitor** app for UART1 (TX GPIO44, RX GPIO43) with ASCII/HEX RX and TX, baud selection, pause, and clear.
+- **UART Monitor** app for UART1 (TX GPIO44, RX GPIO43) with ASCII/HEX RX and TX, baud selection, pause, and clear;
 - **GPIO Tool** for GPIO2, GPIO3, GPIO14, and GPIO21 with input pull modes, digital output, PWM, and pulse generation;
-- **Logic Analyzer** with four channels (GPIO2, GPIO3, GPIO14, GPIO21), 1 kHz to 1 MHz sampling, edge triggers, and a scrollable 1024-sample waveform.
+- **Logic Analyzer** with four channels (GPIO2, GPIO3, GPIO14, GPIO21), 1 kHz to 1 MHz sampling, edge triggers, and a scrollable 1024-sample waveform;
+- **Wi-Fi Scanner** with asynchronous network discovery, RSSI, channel and security details, plus a per-channel access-point histogram.
 
-Planned ports from the original S3 Toolbox include Wi-Fi and BLE scanners, Audio Tool, Settings, storage/export services, and the web dashboard.
+Planned ports from the original S3 Toolbox include the BLE scanner, Audio Tool, Settings, storage/export services, and the web dashboard.
 
 ## Clone
 
