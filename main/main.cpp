@@ -28,7 +28,7 @@ extern "C" void app_main(void) {
  sheet->display.status_bar.data.area.data[0].layout_column_pad = 2;
  sheet->display.status_bar.data.area.data[1].layout_column_pad = 2;
  sheet->display.navigation_bar.data.main.size.height = 34;
- sheet->display.app_launcher.data.icon.main.size = StyleSize::SQUARE(70);
+ sheet->display.app_launcher.data.icon.main.size = StyleSize::RECT(100, 70);
  sheet->display.app_launcher.data.icon.main.layout_row_pad = 3;
  sheet->display.app_launcher.data.icon.image.default_size = StyleSize::SQUARE(48);
  sheet->display.app_launcher.data.icon.image.press_size = StyleSize::SQUARE(44);
