@@ -13,8 +13,9 @@ Developer toolbox firmware for the LCDWiki ES3C28P (ESP32-S3, ILI9341 320x240, F
 - **Logic Analyzer** with four channels (GPIO2, GPIO3, GPIO14, GPIO21), 1 kHz to 1 MHz sampling, edge triggers, and a scrollable 1024-sample waveform;
 - **Wi-Fi Scanner** with asynchronous network discovery, RSSI, channel and security details, plus a per-channel access-point histogram;
 - **BLE Scanner** with asynchronous 6-second scans, deduplicated devices, RSSI, address, manufacturer data, service hints, and beacon detection.
+- **Audio Tool** with ES8311 tone generation, live microphone level metering, and Morse TX/RX decoding.
 
-Planned ports from the original S3 Toolbox include the Audio Tool, Settings, storage/export services, and the web dashboard.
+Planned ports from the original S3 Toolbox include Settings, storage/export services, audio recording, and the web dashboard.
 
 ## Clone
 
