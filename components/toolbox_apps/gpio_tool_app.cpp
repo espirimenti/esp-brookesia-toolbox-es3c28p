@@ -6,6 +6,7 @@
 #include "esp_brookesia.hpp"
 #include "esp_err.h"
 #include "lvgl.h"
+#include "assets/toolbox_icons.h"
 #include "services/gpio_service.h"
 
 #ifdef ESP_UTILS_LOG_TAG
@@ -87,7 +88,7 @@ public:
     }
 
 protected:
-    ToolboxGpioApp(): App("GPIO Tool", nullptr, true, true, true)
+    ToolboxGpioApp(): App("GPIO Tool", &toolbox_icon_gpio_tool, true, true, true)
     {
         for (size_t i = 0; i < CHANNEL_COUNT; ++i) {
             _channels[i].owner = this;

@@ -8,6 +8,7 @@
 #include "esp_heap_caps.h"
 #include "esp_timer.h"
 #include "lvgl.h"
+#include "assets/toolbox_icons.h"
 #include "services/i2c_service.h"
 
 #ifdef ESP_UTILS_LOG_TAG
@@ -99,7 +100,7 @@ public:
     }
 
 protected:
-    ToolboxSystemApp(): App("System", nullptr, true, true, true) {}
+    ToolboxSystemApp(): App("System", &toolbox_icon_system, true, true, true) {}
 
     bool run() override
     {
@@ -183,7 +184,7 @@ public:
     }
 
 protected:
-    ToolboxI2cApp(): App("I2C Scanner", nullptr, true, true, true) {}
+    ToolboxI2cApp(): App("I2C Scanner", &toolbox_icon_i2c_scanner, true, true, true) {}
 
     bool run() override
     {

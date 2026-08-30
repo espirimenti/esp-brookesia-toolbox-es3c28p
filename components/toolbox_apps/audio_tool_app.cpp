@@ -7,6 +7,7 @@
 #include "esp_brookesia.hpp"
 #include "esp_err.h"
 #include "lvgl.h"
+#include "assets/toolbox_icons.h"
 #include "services/audio_service.h"
 #include "services/morse_service.h"
 
@@ -83,7 +84,7 @@ public:
     }
 
 protected:
-    ToolboxAudioApp(): App("Audio Tool", nullptr, true, true, true) {}
+    ToolboxAudioApp(): App("Audio Tool", &toolbox_icon_audio_tool, true, true, true) {}
 
     bool run() override
     {

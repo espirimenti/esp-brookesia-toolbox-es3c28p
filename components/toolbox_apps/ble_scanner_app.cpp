@@ -8,6 +8,7 @@
 #include "esp_err.h"
 #include "esp_timer.h"
 #include "lvgl.h"
+#include "assets/toolbox_icons.h"
 #include "services/ble_scan_service.h"
 
 #ifdef ESP_UTILS_LOG_TAG
@@ -62,7 +63,7 @@ public:
     }
 
 protected:
-    ToolboxBleScannerApp(): App("BLE Scanner", nullptr, true, true, true) {}
+    ToolboxBleScannerApp(): App("BLE Scanner", &toolbox_icon_ble_scanner, true, true, true) {}
 
     bool run() override
     {

@@ -8,6 +8,7 @@
 #include "esp_brookesia.hpp"
 #include "esp_err.h"
 #include "lvgl.h"
+#include "assets/toolbox_icons.h"
 #include "services/uart_service.h"
 
 #ifdef ESP_UTILS_LOG_TAG
@@ -110,7 +111,7 @@ public:
     }
 
 protected:
-    ToolboxUartApp(): App("UART Monitor", nullptr, true, true, true) {}
+    ToolboxUartApp(): App("UART Monitor", &toolbox_icon_uart_monitor, true, true, true) {}
 
     bool run() override
     {

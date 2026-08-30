@@ -4,6 +4,7 @@
 #include "esp_brookesia.hpp"
 #include "esp_err.h"
 #include "lvgl.h"
+#include "assets/toolbox_icons.h"
 #include "services/logic_analyzer_service.h"
 
 #ifdef ESP_UTILS_LOG_TAG
@@ -74,7 +75,7 @@ public:
     }
 
 protected:
-    ToolboxLogicAnalyzerApp(): App("Logic Analyzer", nullptr, true, true, true) {}
+    ToolboxLogicAnalyzerApp(): App("Logic Analyzer", &toolbox_icon_logic_analyzer, true, true, true) {}
 
     bool run() override
     {

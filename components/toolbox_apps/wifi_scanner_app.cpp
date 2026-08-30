@@ -7,6 +7,7 @@
 #include "esp_brookesia.hpp"
 #include "esp_err.h"
 #include "lvgl.h"
+#include "assets/toolbox_icons.h"
 #include "services/wifi_service.h"
 
 #ifdef ESP_UTILS_LOG_TAG
@@ -98,7 +99,7 @@ public:
     }
 
 protected:
-    ToolboxWifiScannerApp(): App("Wi-Fi Scanner", nullptr, true, true, true) {}
+    ToolboxWifiScannerApp(): App("Wi-Fi Scanner", &toolbox_icon_wifi_scanner, true, true, true) {}
 
     bool run() override
     {

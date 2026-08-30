@@ -2,6 +2,8 @@
 #include <vector>
 #include <time.h>
 #include "bsp/esp-bsp.h"
+#include "board/board.h"
+#include "services/config_service.h"
 #include "esp_brookesia.hpp"
 #ifdef ESP_UTILS_LOG_TAG
 #undef ESP_UTILS_LOG_TAG
@@ -13,9 +15,12 @@ using namespace esp_brookesia::gui;
 using namespace esp_brookesia::systems::phone;
 extern "C" void app_main(void) {
  ESP_UTILS_LOGI("Starting ESP-Brookesia Toolbox on LCDWiki ES3C28P");
+ ESP_UTILS_CHECK_ERROR_EXIT(config_service_init(), "Config init failed");
  const bsp_display_cfg_t cfg = BSP_DISPLAY_CONFIG_DEFAULT();
  ESP_UTILS_CHECK_NULL_EXIT(bsp_display_start_with_config(&cfg), "Display init failed");
- ESP_UTILS_CHECK_ERROR_EXIT(bsp_display_backlight_on(), "Backlight init failed");
+ const toolbox_settings_t *settings = config_service_get();
+ ESP_UTILS_CHECK_ERROR_EXIT(board_display_set_brightness(settings != nullptr ? settings->brightness_percent : 100), "Backlight init failed");
+ ESP_UTILS_CHECK_ERROR_EXIT(board_display_set_color_inversion(settings != nullptr ? settings->color_inversion : true), "Display inversion init failed");
  LvLock::registerCallbacks([](int ms) { if (ms < 0) ms = 0; else if (ms == 0) ms = 1; return bsp_display_lock(ms); }, []() { bsp_display_unlock(); return true; });
  Phone *phone = new (std::nothrow) Phone();
  ESP_UTILS_CHECK_NULL_EXIT(phone, "Could not create Phone");
